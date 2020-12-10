@@ -1,27 +1,19 @@
-# NewsApp
+News portal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
+API: https://newsapi.org/ 
+CREATE API KEY: https://newsapi.org/account
 
-## Development server
+1. Landing page with search
+Landing page should initially display news from the top headlines end-point.
+Display 20 of those results in 'top-headlines cards' and the rest (if there are more) after 'load more' button click at the bottom.
+Each 'top headline card' should display title and description with an image if there is a url to the image in the response. User can then click on a 'READ FULL ARTICLE' button to read the article on a new page, 'Article'.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+2. Article page
+Article page should display:
+Source, author, title, description, image, published at date and the content (if all of these have been provided by the endpoint).
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. Search and sorting
+User should be able to search for a term (everything endpoint).
+Search results should be displayed in the same way as the top headlines - in cards and user should also be able to read full article in articles page.
+Once the user searches for the first term there should appear a 'sort by section' offering options to sort results by popularity or relevance or published date (Top headlines should not have sorting option).
+User should be able to go back to home page displaying top headlines
