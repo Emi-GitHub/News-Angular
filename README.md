@@ -18,4 +18,18 @@ Search results should be displayed in the same way as the top headlines - in car
 Once the user searches for the first term there should appear a 'sort by section' offering options to sort results by popularity or relevance or published date (Top headlines should not have sorting option).
 User should be able to go back to home page displaying top headlines
 
-<img src="src/assets/newspaper.jpg" />
+<h3>Landing page</h3>
+<img src="src/assets/github/langing-page.jpg" />
+
+<h3>Article page</h3>
+<img src="src/assets/github/article-page.jpg" />
+
+<h3>Sort by section</h3>
+<img src="src/assets/github/sort-page.jpg" />
+
+<h3>Not found page</h3>
+<img src="src/assets/github/not-found.jpg" />
+
+
+
+
