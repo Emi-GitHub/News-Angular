@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.newsApi.landingNews().subscribe(
       (response:any) => {
-        console.log('landing news',response.articles);
         this.landingNews = response.articles;
       }
     )
@@ -28,7 +27,6 @@ export class HomeComponent implements OnInit {
     this.newsApi.search(term).subscribe(
       (response:any) => {
         this.news = response.articles;
-        console.log('news',response.articles);
         this.router.navigate(['/everything'], {queryParams: {news:JSON.stringify(this.news), term:this.term}})
       }
     )

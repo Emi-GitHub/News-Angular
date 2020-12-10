@@ -20,7 +20,6 @@ export class SearchBarComponent implements OnInit {
   onFormSubmit (event: any) {
     event.preventDefault();
     this.submitted.emit(this.term)
-    console.log('submitted',this.submitted)
     this.showEverything = true;
     
   }

@@ -39,9 +39,6 @@ export class EverythingComponent implements OnInit {
     this.newsApi.sortNews(this.term, sortValue).subscribe(
       (response:any) => {
         this.news = response.articles;
-        console.log('term', this.term)
-        console.log('sort', sortValue)
-        console.log('news', response.articles);
         this.router.navigate(['/everything'], {queryParams: {news:JSON.stringify(this.news)}})
       }
     )
