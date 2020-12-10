@@ -19,16 +19,16 @@ Once the user searches for the first term there should appear a 'sort by section
 User should be able to go back to home page displaying top headlines
 
 <h3>Landing page</h3>
-<img src="src/assets/github/langing-page.jpg" />
+<img src="src/assets/github/langing-page.png" />
 
 <h3>Article page</h3>
-<img src="src/assets/github/article-page.jpg" />
+<img src="src/assets/github/article-page.png" />
 
 <h3>Sort by section</h3>
-<img src="src/assets/github/sort-page.jpg" />
+<img src="src/assets/github/sort-page.png" />
 
 <h3>Not found page</h3>
-<img src="src/assets/github/not-found.jpg" />
+<img src="src/assets/github/not-found.png" />
 
 
 
