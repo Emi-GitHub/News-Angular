@@ -1,4 +1,6 @@
-News portal
+<h1>News portal</h1>
+
+<img src="src/assets/news-favicon.png" />
 
 API: https://newsapi.org/ 
 CREATE API KEY: https://newsapi.org/account
