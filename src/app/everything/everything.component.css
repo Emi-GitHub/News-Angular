@@ -1,0 +1,136 @@
+.go-back {
+  color: var(--color-primary-dark);
+  font-size: 20px;
+  font-family: var(--font-display);
+  margin-left: 3rem;
+}
+
+.go-back-box {
+  transition: all 1s ease-out;
+}
+
+.go-back-box:hover {
+  transform: translateX(-15px);
+}
+
+.sort-box {
+  transition: all 1s ease-out;
+  width: 70rem;
+  margin: 0 auto;
+}
+.sort-box:hover {
+  color: var(--color-primary-dark);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  transform: scale(1.1);
+  padding-top: 35px;
+  padding-bottom: 10px;
+  margin-bottom: 5rem;
+}
+.sort-box:hover .sort-by-heading {
+  color: var(--color-primary-light);
+}
+.sort-box:hover .form-radio-button {
+  border: 5px solid var(--color-primary-light);
+}
+.sort-box:hover .form-radio-button::after {
+  background-color: var(--color-primary-light);
+}
+.sort-box:hover .form-radio-label {
+  color: #777777;
+}
+
+.sort-by-heading {
+  font-family: var(--font-display);
+  line-height: 1;
+  font-size: 30px;
+  color: var(--color-primary-dark);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.sort-by-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+.form-radio-group {
+  margin-right: 20px;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.form-radio-label {
+  font-size: 16px;
+  /*to make like to point, like a link */
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem;
+}
+
+.form-radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid var(--color-primary-dark);
+  /*make a circle*/
+  border-radius: 50%;
+  /*this property (height and width) work only if you give to display block or inline-block element*/
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -0.4rem;
+}
+
+.form-radio-button::after {
+  content: "";
+  display: block;
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-primary-dark);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+/*when radio input is checked*/
+/* + or ~ is sibilings, like we put .box .box-child { ... } to select .box-child that is child of box,
+we can put .box-1 .box-2 { ... } to select .box-2 that is sibiling (on the same line) of .box-1*/
+.form-radio-input:checked ~ .form-radio-label .form-radio-button::after {
+  opacity: 1;
+}
+
+.form-radio-input {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 900px) {
+  .sort-box {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .sort-box:hover {
+    color: var(--color-primary-dark);
+    box-shadow: none;
+    transform: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 600px) {
+  .sort-by-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .form-radio-label {
+    padding-bottom: 25px;
+  }
+  .sort-by-heading {
+    margin-top: 5rem;
+  }
+}

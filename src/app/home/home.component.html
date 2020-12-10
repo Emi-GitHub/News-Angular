@@ -1,0 +1,5 @@
+<div class="news-container">
+  <app-search-bar (submitted)="onTerm($event)"></app-search-bar>
+  <app-landing-page [landingNews]="landingNews"></app-landing-page>
+</div>
+<router-outlet></router-outlet>

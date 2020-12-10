@@ -1,0 +1,54 @@
+<div class="news-box-container">
+  <div *ngFor="let article of landingNews; index as i">
+    <div *ngIf="(i < 20 && !loadMore) || loadMore">
+      <div class="feature-box">
+        <img
+          src="{{ article.urlToImage }}"
+          alt=""
+          style="width: 30rem"
+          *ngIf="article.urlToImage !== null"
+        />
+        <h3 class="heading-tertiary">{{ article.title }}</h3>
+        <p>
+          {{ article.description }}
+        </p>
+        <a
+          [routerLink]="['/article']"
+          [queryParams]="{
+            title: article.title,
+            image: article.urlToImage,
+            content: article.content,
+            description: article.description,
+            source: article.source.name,
+            author: article.author,
+            date: article.publishedAt
+          }"
+          class="btn-text"
+          (click)="
+            onArticleSelect(
+              article.title,
+              article.urlToImage,
+              article.content,
+              article.description,
+              article.source.name,
+              article.author,
+              article.publishedAt
+            )
+          "
+          >Read full article &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="btn-load-more-box">
+  <button class="btn-load-more" (click)="onLoadMoreButtonClicked()">
+    <span class="btn-load-more-visible">Load more</span>
+    <span class="btn-load-more-invisible">Show more news</span>
+  </button>
+</div>
+<div *ngIf="landingNews.length < 21 && loadMore" class="no-more-results">
+  No more results
+</div>
+
+<router-outlet></router-outlet>
