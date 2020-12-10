@@ -1,7 +1,7 @@
 <h1>News portal</h1>
 
-API: https://newsapi.org/ 
-CREATE API KEY: https://newsapi.org/account
+<b>API:</b> https://newsapi.org/ <br/>
+<b>CREATE API KEY:</b> https://newsapi.org/account
 
 1. Landing page with search
 Landing page should initially display news from the top headlines end-point.
