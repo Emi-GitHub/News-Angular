@@ -1,7 +1,5 @@
 <h1>News portal</h1>
 
-<img src="src/assets/news-favicon.png" />
-
 API: https://newsapi.org/ 
 CREATE API KEY: https://newsapi.org/account
 
@@ -19,7 +17,5 @@ User should be able to search for a term (everything endpoint).
 Search results should be displayed in the same way as the top headlines - in cards and user should also be able to read full article in articles page.
 Once the user searches for the first term there should appear a 'sort by section' offering options to sort results by popularity or relevance or published date (Top headlines should not have sorting option).
 User should be able to go back to home page displaying top headlines
-
-![alt text](https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80)
 
 <img src="src/assets/newspaper.jpg" />
