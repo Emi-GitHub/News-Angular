@@ -12,11 +12,12 @@ export class HomeComponent implements OnInit {
   landingNews = []
   term;
 
-  constructor(private newsApi:NewsService, private router: Router) {}
+  constructor(private newsApi: NewsService, private router: Router) { }
 
   ngOnInit() {
+    console.log('term in home', this.term)
     this.newsApi.landingNews().subscribe(
-      (response:any) => {
+      (response: any) => {
         this.landingNews = response.articles;
       }
     )
@@ -25,9 +26,9 @@ export class HomeComponent implements OnInit {
   onTerm(term: string) {
     this.term = term;
     this.newsApi.search(term).subscribe(
-      (response:any) => {
+      (response: any) => {
         this.news = response.articles;
-        this.router.navigate(['/everything'], {queryParams: {news:JSON.stringify(this.news), term:this.term}})
+        this.router.navigate(['/everything'], { queryParams: { news: JSON.stringify(this.news), term: this.term } })
       }
     )
   }

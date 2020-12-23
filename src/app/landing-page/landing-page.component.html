@@ -15,13 +15,7 @@
         <a
           [routerLink]="['/article']"
           [queryParams]="{
-            title: article.title,
-            image: article.urlToImage,
-            content: article.content,
-            description: article.description,
-            source: article.source.name,
-            author: article.author,
-            date: article.publishedAt
+            title: article.title
           }"
           class="btn-text"
           (click)="

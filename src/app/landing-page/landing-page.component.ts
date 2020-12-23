@@ -8,18 +8,22 @@ import { Router } from '@angular/router';
 })
 export class LandingPageComponent implements OnInit {
   @Input() landingNews = [];
-  loadMore : boolean = false;
+  @Input() term;
+  @Input() sort;
+  loadMore: boolean = false;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    console.log('term in landing page', this.term)
   }
 
-  onArticleSelect(title, image, content, description, source, author, date){
-    this.router.navigate(['/article'], {queryParams: {title:title, image:image, content:content, description:description, source:source, author:author, date:date}})
+  onArticleSelect(title) {
+    //this.router.navigate(['/article'], { queryParams: { title: btoa(title) } })
+    this.router.navigate(['/article'], { queryParams: { title: title, term: this.term, sort: this.sort } })
   }
 
-  onLoadMoreButtonClicked(){
+  onLoadMoreButtonClicked() {
     this.loadMore = true
   }
 }

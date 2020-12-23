@@ -17,14 +17,13 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onFormSubmit (event: any) {
+  onFormSubmit(event: any) {
     event.preventDefault();
     this.submitted.emit(this.term)
     this.showEverything = true;
-    
   }
 
-  onSearchSubmit(){
+  onSearchSubmit() {
     this.showEverything = true;
   }
 

@@ -16,7 +16,8 @@
           name="size"
           value="popularity"
           [(ngModel)]="sort"
-          (input)="onSortChange($event.target.value)"
+          (input)="onSortChange($event.target.value, term)"
+          (click)="onSortClick()"
         />
         <label for="popularity" class="form-radio-label">
           <span class="form-radio-button"></span>Popularity
@@ -30,7 +31,8 @@
           name="size"
           value="relevance"
           [(ngModel)]="sort"
-          (input)="onSortChange($event.target.value)"
+          (input)="onSortChange($event.target.value, term)"
+          (click)="onSortClick()"
         />
         <label for="relevance" class="form-radio-label">
           <span class="form-radio-button"></span>Relevance
@@ -44,7 +46,8 @@
           name="size"
           value="publishedAt"
           [(ngModel)]="sort"
-          (input)="onSortChange($event.target.value)"
+          (input)="onSortChange($event.target.value, term)"
+          (click)="onSortClick()"
         />
         <label for="date" class="form-radio-label">
           <span class="form-radio-button"></span>Published date
@@ -52,6 +55,6 @@
       </div>
     </div>
   </div>
-  <app-landing-page [landingNews]="news"></app-landing-page>
+  <app-landing-page [landingNews]="news" [term]="term" [sort]="sort"></app-landing-page>
 </div>
 <router-outlet></router-outlet>

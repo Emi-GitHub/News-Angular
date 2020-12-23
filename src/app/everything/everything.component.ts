@@ -8,39 +8,47 @@ import { NewsService } from '../news.service';
   styleUrls: ['./everything.component.css']
 })
 export class EverythingComponent implements OnInit {
-  public news;
-  term;
-  sort:string = 'relevance'
+  public news = JSON.parse(this.route.snapshot.queryParamMap.get('news'));
+  term = this.route.snapshot.queryParamMap.get('term');
+  sort: string = 'relevance'
 
-  constructor(private route: ActivatedRoute, private newsApi:NewsService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private newsApi: NewsService, private router: Router) { }
 
   ngOnInit(): void {
-    let articleNews = JSON.parse(this.route.snapshot.queryParamMap.get('news'));
-    let term = this.route.snapshot.queryParamMap.get('term');
-    this.term = term;
-    this.news = articleNews;
+    //let articleNews = JSON.parse(this.route.snapshot.queryParamMap.get('news'));
+    //let term = this.route.snapshot.queryParamMap.get('term');
+    //this.term = term;
+    //this.news = articleNews;
+    console.log('term in everything:', this.term)
   }
 
   onTerm(term: string) {
     this.term = term;
     this.newsApi.search(term).subscribe(
-      (response:any) => {
+      (response: any) => {
         this.news = response.articles;
-        this.router.navigate(['/everything'], {queryParams: {news:JSON.stringify(this.news)}})
+        this.router.navigate(['/everything'], { queryParams: { news: JSON.stringify(this.news) } })
       }
     )
   }
 
-  onBackClick(){
-      this.router.navigate(['/'])
+  onBackClick() {
+    this.router.navigate(['/'])
   }
 
-  onSortChange(sortValue: string) {
-    this.newsApi.sortNews(this.term, sortValue).subscribe(
-      (response:any) => {
+  onSortChange(sortValue: string, term: string) {
+    this.term = term;
+    console.log('term onSortChange before api', this.term)
+    this.newsApi.sortNews(term, sortValue).subscribe(
+      (response: any) => {
         this.news = response.articles;
-        this.router.navigate(['/everything'], {queryParams: {news:JSON.stringify(this.news)}})
+        this.router.navigate(['/everything'], { queryParams: { news: JSON.stringify(this.news) } })
+        console.log('term onSortChange after api', this.term)
       }
     )
+  }
+
+  onSortClick() {
+    console.log('on sort click', this.term)
   }
 }

@@ -1,19 +1,19 @@
 <div class="news-container-article">
-  <h1 class="article-heading text-center">
+  <h1 class="article-heading text-center" >
     {{ title }}
   </h1>
   <div class="article-img-box" *ngIf="image !== null">
     <img src="{{ image }}" alt="article-image" />
   </div>
-  <div class="article-description">
+  <div class="article-description" >
     {{ content }}
   </div>
-  <div class="article-content">
+  <div class="article-content" >
     {{ description }}
   </div>
   <hr />
   <div class="article-footer">
-    <span>
+    <span *ngIf="source !== null">
       <svg
         width="1em"
         height="1em"
@@ -33,7 +33,7 @@
       </svg>
       <b>Source:</b> {{ source }}</span
     >
-    <span>
+    <span *ngIf="author !== null">
       <svg
         width="1em"
         height="1em"
@@ -63,7 +63,7 @@
       </svg>
       <b>Author:</b> {{ author }}</span
     >
-    <span>
+    <span *ngIf="date!== null">
       <svg
         width="1em"
         height="1em"
