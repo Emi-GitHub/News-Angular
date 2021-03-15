@@ -13,7 +13,7 @@
   </div>
   <hr />
   <div class="article-footer">
-    <span>
+    <span *ngIf="source !== null">
       <svg
         width="1em"
         height="1em"
@@ -33,7 +33,7 @@
       </svg>
       <b>Source:</b> {{ source }}</span
     >
-    <span>
+    <span *ngIf="author !== null">
       <svg
         width="1em"
         height="1em"
@@ -63,7 +63,7 @@
       </svg>
       <b>Author:</b> {{ author }}</span
     >
-    <span>
+    <span *ngIf="date !== null">
       <svg
         width="1em"
         height="1em"

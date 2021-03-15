@@ -13,6 +13,10 @@ import { ArticleComponent } from './article/article.component';
 import { EverythingComponent } from './everything/everything.component';
 import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NewsEffects } from './store/effects/news.effects';
+import { NewsReducer } from './store/reducers/news.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     ArticleComponent,
     EverythingComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     CommonModule,
@@ -30,8 +34,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    EffectsModule.forRoot([NewsEffects]),
+    StoreModule.forRoot({ newsNgrx: NewsReducer }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
